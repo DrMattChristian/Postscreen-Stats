@@ -11,6 +11,8 @@ check:
 	flake8 $(PYTHON_SCRIPTS)
 	pep8 $(PYTHON_SCRIPTS)
 	pyflakes $(PYTHON_SCRIPTS)
+	pylint $(PYTHON_SCRIPTS)
+	pylint-3.4 $(PYTHON_SCRIPTS)
 
 # Remove Python compiled file
 clean:
