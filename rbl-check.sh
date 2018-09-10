@@ -8,13 +8,12 @@ RBL+="dnsbl.sorbs.net spam.dnsbl.sorbs.net truncate.gbudb.net all.s5h.net "
 RBL+="dnsbl-1.uceprotect.net dnsbl-2.uceprotect.net dnsbl-3.uceprotect.net "
 RBL+="psbl.surriel.com ubl.unsubscore.com db.wpbl.info "
 RBL+="all.spamrats.com rbl.megarbl.net srnblack.surgate.net "
-RBL+="dnsbl.inps.de drone.abuse.ch httpbl.abuse.ch korea.services.net "
-RBL+="spamrbl.imp.ch wormrbl.imp.ch "
-RBL+="ips.backscatterer.org spamguard.leadmon.net dnsbl.tornevall.org "
+RBL+="dnsbl.inps.de korea.services.net bl.mailspike.net "
+RBL+="spamrbl.imp.ch wormrbl.imp.ch dnsbl.spfbl.net "
+RBL+="ips.backscatterer.org spamguard.leadmon.net "
 RBL+="ix.dnsbl.manitu.net tor.dan.me.uk rbl.efnetrbl.org "
 RBL+="dnsbl.dronebl.org access.redhawk.org "
-RBL+="rbl.interserver.net query.senderbase.org bogons.cymru.com "
-# Other DNSbl lists:  free.v4bl.org  hostkarma.junkemailfilter.com
+RBL+="rbl.interserver.net bogons.cymru.com "
 for server in $SRV
 do
     # Resolve the DNS name into an Internet IP address
