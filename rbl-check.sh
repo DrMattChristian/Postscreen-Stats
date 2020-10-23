@@ -15,11 +15,16 @@ RBL+="dnsbl.dronebl.org access.redhawk.org "
 RBL+="rbl.interserver.net bogons.cymru.com "
 for server in $SRV
 do
-    # Resolve the DNS name into an Internet IP address
+    # Resolve the DNS name into an Internet IPv4 address
     ip=$(dig +short $server | grep -E "^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$")
-    # Testing IP address = 127.0.0.2
+    if [ -z "$ip" ]
+    then
+        echo "DNS name lookup of $server failed to resolve to an Internet IPv4 address. Skipping!"
+        continue
+    fi
+    # Testing IPv4 address = 127.0.0.2
     #ip="127.0.0.2"
-    # Reverse the IP address octets for DNSbl check format
+    # Reverse the IPv4 address octets for DNSbl check format
     r_ip=$(echo "$ip" | awk -F"." '{for(i=NF;i>0;i--) printf i!=1?$i".":"%s",$i}')
     for rbl in $RBL
     do
